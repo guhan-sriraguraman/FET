@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+th, td {
+  text-align: center;
+  padding: 16px;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+</style>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Roll No</th>
+    <th>Name</th>
+    <th>CGPA</th>
+    <th>Address</th>
+  </tr>
+  <tr *ngFor="let s1 of students">
+    <td>{{s1.roll_no}}</td>
+    <td>{{s1.name}}</td>
+    <td>{{s1.cgpa}}</td>
+    <td>{{s1.address}}</td>
+  </tr>
+</table>
+</body>
+</html>

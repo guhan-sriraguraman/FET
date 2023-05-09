@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("div").hide();
+        $("h1").hover(function(){
+            $(this).css("background-color","green");
+        })
+        $("h1").click(function(){
+            $("#i1").toggle(2000);
+            $("div").show();
+        })
+        $("h1").mouseleave(function(){
+            $(".card").css("background-color","gray");
+        })
+        $(".column").click(function(){
+            $("h3").css("color","red");
+        })
+    })
+</script>
+</head>
+<body>
+<h1 style="text-align:center;color: crimson;">Our Collections</h2>
+    <img src="a2.jpg" id="i1" width="1300px" height="550px">
+<div class="row">
+    <div class="column">
+<div class="card">
+  <img src="a1.jpg" style="width:100%">
+  <h2>Pink Roses Boutique</h2>
+  <h3>Rs.645</h3>
+  <a href="b.html"><button>Buy Now</button></a>
+</div>
+</div>
+<div class="column">
+<div class="card">
+    <img src="m1.jpg" style="width:100%">
+    <h2>Awesome Rose Flowers</h2>
+    <h3>Rs.1795</h3>
+    <a href="b.html"><button>Buy Now</button></a>
+  </div>
+</div>
+<div class="column">
+    <div class="card">
+        <img src="m2.jpg" style="width:100%">
+        <h2>Purple Orchid Bouquet</h2>
+        <h3>Rs.695</h3>
+        <a href="b.html"><button>Buy Now</button></a>
+      </div>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+<div class="card">
+  <img src="m3.jpg" style="width:100%">
+  <h2>Bunch of red roses</h2>
+  <h3>Rs.1000</h3>
+  <a href="b.html"><button>Buy Now</button></a>
+</div>
+</div>
+<div class="column">
+<div class="card">
+    <img src="m4.jpg" style="width:100%">
+    <h2>Mixed Flowers Bouquet</h2>
+    <h3>Rs.500</h3>
+    <a href="b.html"><button>Buy Now</button></a>
+  </div>
+</div>
+<div class="column">
+    <div class="card">
+        <img src="m5.jpg" style="width:100%">
+        <h2>White Roses Bouquet</h2>
+        <h3>Rs.450</h3>
+        <a href="b.html"><button>Buy Now</button></a>
+      </div>
+    </div>
+</div>
+
+</body>
+</html>

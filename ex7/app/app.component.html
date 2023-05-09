@@ -1,0 +1,129 @@
+<html>
+<head>
+    <style>
+    @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+h2 {font-family: "Emilys Candy", cursive; text-align:center; color:white;}
+*{
+  box-sizing:border-box;
+    margin:0;
+  padding:0;
+}
+.header{
+  width:100%;
+  text-align:center;
+  background-color:rgb(110, 30, 110);
+}
+.header> span{
+  font-size:60px;
+  font-family:Emilys Candy;
+  text-transform:uppercase;
+  color:white;
+}
+.navbar{
+  display:inline-block;
+  width:100%;
+  background-color:black;
+  padding:15px;
+  
+}
+.navbar-options>li{
+  display:inline-block;
+  width:16%;
+  text-align:center;
+}
+.navbar-options>li>a{
+  text-decoration:none;
+  font-family:sans-serif;
+  text-transform:uppercase;
+  color:white;
+  padding:15px;
+}
+.navbar-options>li>a:hover,.active{
+  background-color:rgb(173, 120, 173);
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  text-align: center;
+  font-family: arial;
+}
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+  </style>
+</head><body>
+<div class= "header">
+  <span><i>{{fullName.firstName}} {{fullName.secondName}}</i></span>                                  
+</div>                                         
+<div class = "navbar">
+<ul class = "navbar-options">
+  <li><a href = "#">Furnitures</a></li>
+  <li><a href="#"> Mattresses </a></li>
+   <li><a href="#">Home Decor</a></li>
+  <li><a href="#"> kitchen & Dining</a></li>
+  <li><a href="#">Lamps & Lightning</a></li>
+  <li><a href="#">Home utility</a></li>
+</ul>
+</div>
+<img src="https://ii2.pepperfry.com/assets/0fc3f136-009e-497f-9ff4-f27196e2c3c6.jpg" (click)="changeValue()" width="1450px" height="400px"><br>
+<h1 style="color:brown;padding-left: 600px;">Shop by categories</h1>
+<div class="row">
+  <div class='column'>
+    <div class='card'>
+      <img src='https://ii1.pepperfry.com/media/wysiwyg/banners/Decor_1440_category_17feb_19.jpg' width='100%'>
+    </div>
+  </div>
+  <div class='column'>
+    <div class='card'>
+      <img src='https://ii1.pepperfry.com/media/wysiwyg/banners/Decor_1440_category_17feb_27.jpg' width='100%'>
+    </div>
+  </div>
+  <div class='column'>
+    <div class='card'>
+      <img src='https://ii1.pepperfry.com/media/wysiwyg/banners/Decor_1440_category_17feb_24.jpg' width='100%'>
+    </div>
+  </div>
+  <div class='column'>
+    <div class='card'>
+      <img src='https://ii1.pepperfry.com/media/wysiwyg/banners/Decor_1440_category_17feb_4.jpg' width='100%'>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class='column'>
+    <div class='card'>
+      <h2 style="color:black">Vases</h2>
+    </div>
+  </div>
+  <div class='column'>
+    <div class='card'>
+      <h2 style="color:black">Photo Frames</h2>
+    </div>
+  </div>
+  <div class='column'>
+    <div class='card'>
+      <h2 style="color:black">Table Organizers</h2>
+    </div>
+  </div>
+  <div class='column'>
+    <div class='card'>
+      <h2 style="color:black">Prayer Essentials</h2>
+    </div>
+  </div>
+</div><br><br> 
+ <app-test> </app-test>
+  <h1>Decorate Your Entire Home With Home Town Range</h1><br>
+  <div *ngFor='let employee of employees'>  
+    <ul>
+      <li style="color:red;font-size:30px">=>{{employee.i1}}</li><br>
+    </ul>  
+  </div>
+</body>
+</html>

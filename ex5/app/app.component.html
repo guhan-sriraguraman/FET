@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+	  <style>
+      body {
+  width: 100%;
+  margin: 0;
+  background-color: #1b1b32;
+	color: #f5f6f7;
+  font-family: Tahoma;
+	font-size: 16px;
+}
+
+h1, p {
+  margin: 0em auto;
+  text-align: center;
+}
+
+form {
+  width: 60vw;
+	max-width: 500px;
+	min-width: 300px;
+	margin: 0 auto;
+  padding-bottom: 2em;
+}
+
+fieldset {
+  border: none;
+	padding: 2rem 0;
+}
+
+fieldset:not(:last-of-type) {
+  border-bottom: 3px solid #3b3b4f;
+}
+
+label {
+  display: block;
+	margin: 0.5rem 0;
+}
+
+input,
+textarea,
+select {
+  margin: 10px 0 0 0;
+	width: 100%;
+  min-height: 2em;
+}
+
+input, textarea ,select{
+  background-color: #0a0a23;
+  border: 1px solid #0a0a23;
+  color: #ffffff;
+}
+
+.inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 60%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: #3b3b4f;
+  border-color: white;
+  min-width: 300px;
+}
+a {
+  color: #dfdfe2;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <form [formGroup]="registrationform" (ngSubmit)="onsubmit()">
+      <fieldset>
+        <label>Enter Your First Name: <input formControlName="fname" type="text"></label>
+        <div *ngIf="registrationform.controls['fname'].invalid && (registrationform.controls['fname'].touched||submitted)">
+          <span *ngIf="registrationform.controls['fname'].errors?.['required']" style="color:red">*Name is required</span>
+          <span *ngIf="registrationform.controls['fname'].errors?.['pattern']" style="color:red">*Invalid Username</span>
+        </div>
+        <label>Enter Your Last Name: <input formControlName="lname" type="text"></label>
+        <div *ngIf="registrationform.controls['lname'].invalid && (registrationform.controls['lname'].touched||submitted)">
+          <span *ngIf="registrationform.controls['lname'].errors?.['required']" style="color:red">*Last Name is required</span>
+        </div>
+        <label>Enter Your Email: <input type="email" formControlName="email" /></label>
+        <div *ngIf="registrationform.controls['email'].invalid && (registrationform.controls['email'].touched||submitted)">
+          <span *ngIf="registrationform.controls['email'].errors?.['required']" style="color:red">*Email is required</span>
+        </div>
+        <label>Create a New Password: <input type="password" formControlName="pwd" /></label>
+        <div *ngIf="registrationform.controls['pwd'].invalid && (registrationform.controls['pwd'].touched||submitted)">
+          <span *ngIf="registrationform.controls['pwd'].errors?.['required']" style="color:red">*Password is required</span>
+          <span *ngIf="registrationform.controls['pwd'].errors?.['pattern']" style="color:red">*Invalid Password</span>
+        </div>
+      </fieldset>
+      <fieldset>
+        <label><input type="radio" value="radio1" name="account-type" class="inline" formControlName="r1"/> Personal Account</label>
+        <label><input type="radio"  value="radio2"  name="account-type" class="inline" formControlName="r1" /> Business Account</label>
+      <div *ngIf="registrationform.controls['r1'].invalid && submitted">
+          <span *ngIf="registrationform.controls['r1'].errors?.['required']" style="color:red">*Select Account</span>
+        </div>
+      </fieldset>
+      <fieldset>
+        <label>How did you hear about us?
+          <select name="course" formControlName="c1">
+            <option value="">Please select one</option>
+            <option *ngFor="let course of courses" [value]="course">{{course}}</option>
+          </select>
+          <div *ngIf="registrationform.controls['c1'].invalid && (registrationform.controls['c1'].touched||submitted)">
+            <span *ngIf="registrationform.controls['c1'].errors?.['required']" style="color:red">*Choose one</span>
+          </div>
+        </label>
+        <label>Provide a bio: 
+          <textarea name="bio" rows="3" cols="30" placeholder="I like coding on the beach..." formControlName="bio"></textarea>
+          <div *ngIf="registrationform.controls['bio'].invalid && (registrationform.controls['bio'].touched||submitted)">
+            <span *ngIf="registrationform.controls['bio'].errors?.['required']" style="color:red">*Bio is required</span>
+          </div>
+          </label>
+      </fieldset>
+      <fieldset>
+        <label>
+          <input type="checkbox" name="terms" class="inline" formControlName="check1"/> I accept the <a href="#">terms and conditions</a><br>
+          <div *ngIf="registrationform.controls['check1'].invalid && (registrationform.controls['check1'].touched||submitted)">
+            <span *ngIf="registrationform.controls['check1'].errors?.['required']" style="color:red">*Accept the condition</span>
+          </div>   
+        </label>
+      </fieldset>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

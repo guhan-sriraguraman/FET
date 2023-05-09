@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+</style>
+</head>
+<body>
+<div>
+  <form class="container" onsubmit="fun()" >
+   <center><h2>Its time to travel!!</h2></center>
+    <b>Passenger Name</b><input type="text" required>
+    <b>Age</b>
+    <input type="radio" name="r1">1-15
+    <input type="radio" name="r1">16-30
+    <input type="radio" name="r1">31-50
+    <input type="radio" name="r1">Above 50<br><br>
+    <b>Mobile Number</b><input type="text" required>
+    <b>International or Domestic Fight?</b>
+    <input type="radio" name="r2">International
+    <input type="radio" name="r2">Domestic<br><br>
+    <b>Travelling Date</b><input type="date" required>
+    <b>Departing From</b>
+    <select required>
+        <option></option>
+        <option>USA</option>
+        <option>London</option>
+        <option>Bangalore</option>
+        <option>Chennai</option>
+    </select>
+    <b>Destination</b>
+    <select required>
+        <option></option>
+        <option>USA</option>
+        <option>London</option>
+        <option>Bangalore</option>
+        <option>Chennai</option>
+    </select>
+    <button class="btn" onmouseover="bigImg(this)" onmouseout="normalImg(this)">Book Now</button>
+  </form>
+</div>
+<script>
+    function fun() {
+      if(confirm("Are you sure want to book the ticket??"))
+     {
+  alert("Ticket was booked!!");
+  }
+    }
+    function bigImg(x) {
+  x.style.width = "300px";
+}
+
+function normalImg(x) {
+  x.style.width = "150px";
+}
+</script>    
+</body>
+</html>
